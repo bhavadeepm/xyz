@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    header {
+        background-color: #f9f9f9;
+        color: #333; /* Darker text color */
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    }
+
+    header .logo img {
+        height: 50px;
+        width: auto;
+    }
+
+    header nav ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    header nav ul li {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    header nav ul li a {
+        color: #333; /* Match body text color */
+        transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+        color: #333;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.jpg" alt="Medicinal Plants Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="about.html">About</a></li> <!-- Link updated to point to About Us section -->
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>    
+    <section id="hero">
+    <div class="container">
+        <h1>ELIXIR</h1>
+        <p> Your guide to Talakaveri's medicinal plant heritage</p>
+        <a href="#about" class="btn">Learn More</a>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2>About Talakaveri</h2>
+        <p>The Talakaveri Hills, located in the Western Ghats, are renowned for their exceptional biodiversity and traditional knowledge of medicinal plants. These plants have been an integral part of healing practices, with many offering proven efficacy in addressing wounds, skin diseases, and inflammatory conditions.</p>
+        <p>The ELIXIR database catalogs over 84 species of medicinal plants, bridging the gap between traditional and modern medicine. This resource fosters conservation and innovation in healthcare practices worldwide.</p>
+        <p>Medicinal plants have been a part of human health for thousands of years, particularly in India, where the usage of such plants has its roots deep in the traditional medicine systems like Ayurveda, Unani, Siddha, and Homeopathy (AYUSH). Such systems remain in use today because they are effective and culturally important. The National Medicinal Plants Board indicates that India is home to around 17,000–18,000 species of flowering plants, where there are around 7,000 documented species for medicinal use, and this substantially contributes to traditional healthcare, the growing herbal industry, rural livelihoods, and national health security.</p>
+        <p>The Western Ghats are a UNESCO World Heritage Site and are an important reserve of India's medicinal flora. Karnataka contributes to this with 19.58% forest cover and 4,500 flowering plant species, of which 1,956 have documented medicinal properties. One of the 13 Medicinal Plants Conservation Areas is the Talacauvery West Coast Semi-Evergreen Forest, which hosts 363 medicinal plant species. It concentrates on species within this region that have been known to heal wounds, skin diseases, and inflammation conditions. Talakaveri is endowed with an exclusive microclimate, thereby presenting excellent biodiversity that places the area at a vital center for medicinal research and conservation.</p>
+    </div>
+</section>
+
+<section id="classification">
+    <div class="container">
+        <div class="section-title">
+            <h3>Classification of Medicinal Plants</h3>
+            <p>The following charts showcase the distribution of medicinal plants found in the Talakaveri region.</p>
+        </div>
+        <div class="charts">
+            <div class="chart">
+                <h4>Distribution of 363 Medicinal Plants</h4>
+                <img src="images/363.jpg" alt="Pie chart of 363 plants">
+                <p>Trees: 30.9% (112 species), Herbs: 30.3% (110 species), Shrubs: 23.4% (85 species), Climbers: 11.6% (42 species), Others: 3.9% (14 species).</p>
+            </div>
+            <div class="chart">
+                <h4>Distribution of 84 Medicinal Plants</h4>
+                <img src="images/84.jpg" alt="Pie chart of 84 plants">
+                <p>Herbs: 41.67% (35 plants), Shrubs: 29.76% (25 plants), Trees: 23.81% (20 plants), Climbers: 4.76% (4 plants).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Medicinal Plants of Talakaveri | All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

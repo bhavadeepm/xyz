@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style.css">  <!-- Link to other page-specific styles -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Medicinal Plants Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="about.html">About</a></li> <!-- Link updated to point to About Us section -->
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+        <main>
+        <div class="reference-container">
+            <h1>References</h1>
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Plant Name</th>
+                        <th>Data Link</th>
+                        <th>Image Link</th>
+                    </tr>
+                </thead>
+                <tbody id="plant-table-body">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        const plants = [
+{
+    "Name": "Achyranthes aspera",
+    "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4655238/",
+    "Imagelink" : "https://en.wikipedia.org/wiki/Achyranthes_aspera"
+},
+{
+    "Name": "Acronychia pedunculata",
+    "Publication DOI": "https://en.wikipedia.org/wiki/Acronychia_pedunculata#:~:text=Extracts%20of%20its%20leaves%2C%20bark,in%20China%20for%20making%20perfumes",
+    "Imagelink" : "https://en.wikipedia.org/wiki/Acronychia_pedunculata"
+},
+{
+    "Name": "Adiantum caudatum L.",
+    "Publication DOI": "https://www.rpmcollege.edu.in/herbarium/upload_file/pdf/918685396.pdf#:~:text=Medicinal/Economic%20uses:%20The%20fronds%20are%20said%20to,analgesic%2C%20anti%2D%20inflammatory%2C%20antinociceptive%2C%20anti%2Dimplanation%2C%20antiviral%2C%20anti",
+    "Imagelink" : "https://tropical.theferns.info/viewtropical.php?id=Adiantum+caudatum"
+},
+{
+    "Name": "Aegle marmelos",
+    "Publication DOI": "https://www.dabur.com/ayurveda/ayurvedic-medicinal-plants/bael",
+    "Imagelink": "https://www.dabur.com/ayurveda/ayurvedic-medicinal-plants/bael",
+},
+{
+    "Name": "Aerva lanata",
+    "Publication DOI": "https://www.researchgate.net/publication/338337494_A_REVIEW_ARTICLE_OF_BISHERI_BOOTI_AERVA_LANATA_-ITS_TRADITIONAL_USES_AND_PHARMACOLOGICAL_ACTIONS",
+    "Imagelink": "https://greenfield.organic/shop/organic-polpala-aerva-lanata-whole/",
+},
+{
+    "Name": "Ageratum conyzoides",
+    "Publication DOI": "https://www.agrifoodscience.com/index.php/TURJAF/article/view/5146/2639",
+    "Imagelink": "https://indiabiodiversity.org/observation/show/17750212",
+},
+{
+    "Name": "Ageratum houstonianum Mill.",
+    "Publication DOI": "https://www.uuappliedandlifesciences.com/wp-content/uploads/2022/12/Paper-8.pdf",
+    "Imagelink" : "https://en.wikipedia.org/wiki/Ageratum_houstonianum",
+},
+{
+    "Name": "Albizia lebbeck (L.) Benth.",
+    "Publication DOI": "https://www.iafaforallergy.com/herbs-a-to-z/shirish-albizia-lebbeck/",
+    "Imagelink" : "https://nabatdelivery.com/albizia-lebbeck-tree/",
+},
+{
+    "Name": "Allophylus cobbe",
+    "Publication DOI": "https://thescipub.com/abstract/ajptsp.2014.223.231",
+    "Imagelink" : "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:77163314-1",
+
+},
+
+{
+    "Name": "Alstonia scholaris",
+    "Publication DOI": "https://www.sciencedirect.com/topics/pharmacology-toxicology-and-pharmaceutical-science/alstonia-scholaris#:~:text=Different%20organs%20of%20the%20Alstonia,gastrointestinal%20troubles%2C%20cancer%2C%20etc.",
+    "Imagelink" : "https://indiabiodiversity.org/species/show/7455",
+},
+{
+        "Name": "Alysicarpus monilifer",
+        "Imagelink": "https://www.flowersofindia.net/catalog/slides/Necklace-Pod%20Alyce%20Clover.html",
+        "Publication DOI": "10.1071/AR9870355"
+    },
+    {
+        "Name": "Amaranthus spinosus",
+        "Imagelink": "https://gobotany.nativeplanttrust.org/species/amaranthus/spinosus/",
+        "Publication DOI": "https://www.ijrpc.com/files/20-4130.pdf"
+    },
+    {
+        "Name": "Anaphyllum wightii",
+        "Imagelink": "https://en.wikipedia.org/wiki/Anaphyllum",
+        "Publication DOI": "https://www.ijpsonline.com/articles/emin-vitroem-antiinflammatory-potential-of-emanaphyllum-wightiiem-schott-an-endemic-plant-of-southern-western-ghats-4921.html"
+    },
+    {
+        "Name": "Artocarpus heterophyllus",
+        "Imagelink": "https://www.toothmountainnursery.com/product/jackfruit-artocarpus-heterophyllus/",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6339770/"
+    },
+    {
+        "Name": "Azadirachta indica",
+        "Imagelink": "https://en.wikipedia.org/wiki/Azadirachta_indica#/media/File:Neem_(Azadirachta_indica)_in_Hyderabad_W_IMG_6976.jpg",
+        "Publication DOI": "https://www.dabur.com/ayurveda/ayurvedic-medicinal-plants/neem"
+    },
+    {
+        "Name": "Breynia retusa",
+        "Imagelink": "https://www.flowersofindia.net/catalog/slides/Cup%20Saucer%20Plant.html",
+        "Publication DOI": "https://www.researchgate.net/publication/320345458_A_pharmacological_review_on_Breynia_retusa"
+    },
+    {
+        "Name": "Breynia vitis-idaea",
+        "Imagelink": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:340112-1",
+        "Publication DOI": "https://www.acgpubs.org/doc/20220829121037A2-314-RNP-2112-2280.pdf"
+    },
+    {
+        "Name": "Callicarpa tomentosa",
+        "Imagelink": "https://en.wikipedia.org/wiki/Callicarpa_tomentosa",
+        "Publication DOI": "https://smpbkerala.in/herbal-data/callicarpa-tomentosa.asp"
+    },
+    {
+        "Name": "Cardiospermum halicacabum",
+        "Imagelink": "https://en.wikipedia.org/wiki/Cardiospermum_halicacabum",
+        "Publication DOI": "https://www.researchgate.net/publication/338219417_Morphology_and_Medicinal_values_of_Cardiospermum_halicacabum"
+    },
+    {
+        "Name": "Careya arborea",
+        "Imagelink": "https://www.flowersofindia.net/catalog/slides/Wild%20Guava.html",
+        "Publication DOI": "https://phytopharmajournal.com/assets/pdf_files/Vol5_Issue1_06.pdf"
+    },
+    {
+        "Name": "Cassia fistula",
+        "Imagelink": "https://www.nparks.gov.sg/florafaunaweb/flora/2/7/2787",
+        "Publication DOI": "https://www.mdpi.com/2673-4583/14/1/95"
+    },
+    {
+        "Name": "Cassia tora L.",
+        "Imagelink": "https://www.altrafine.com/blog/medicinal-properties-and-applications-of-cassia-tora-gum-powder/",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3318897/"
+    },
+    {
+        "Name": "Centella asiatica",
+        "Imagelink": "https://en.wikipedia.org/wiki/Centella_asiatica",
+        "Publication DOI": "https://www.medicalnewstoday.com/articles/centella-asiatica-for-skin"
+    },
+    {
+        "Name": "Cissus quadrangularis",
+        "Imagelink": "https://www.indiamart.com/proddetail/cissus-quadrangularis-hadjod-harjori-13208773133.html",
+ "Publication DOI": "https://www.mdpi.com/2673-9992/21/1/20"
+    },
+    {
+        "Name": "Citronella",
+        "Imagelink": "https://wikifarmer.com/citronella-a-complete-guide-about-history-benefits-and-growing-tips/",
+        "Publication DOI": "https://www.indigo-herbs.co.uk/natural-health-guide/benefits/citronella"
+    },
+    {
+        "Name": "Clerodendrum infortunatum Linn.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Clerodendrum_infortunatum",
+        "Publication DOI": "https://www.researchgate.net/publication/233955562_Clerodendrum_Infortunatum_Linn_A_Review"
+    },
+    {
+        "Name": "Clerodendrum serratum",
+        "Imagelink": "https://en.wikipedia.org/wiki/Clerodendrum",
+        "Publication DOI": "https://www.dineshkhedkar.co.in/mpdb/record.php?act=view&id=MS081"
+    },
+    {
+        "Name": "Clerodendrum viscosum",
+        "Imagelink": "https://www.inaturalist.org/guide_taxa/1325746",
+        "Publication DOI": "https://www.researchgate.net/publication/274318505_Clerodendrum_viscosum_Traditional_uses_pharmacological_activities_and_phytochemical_constituents"
+    },
+    {
+        "Name": "Commelina benghalensis L.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Commelina_benghalensis",
+        "Publication DOI": "https://www.sciencedirect.com/science/article/abs/pii/S0308814620302703"
+    },
+    {
+        "Name": "Costus speciosus",
+        "Imagelink": "https://en.wikipedia.org/wiki/Cheilocostus_speciosus",
+        "Publication DOI": "https://www.sciencedirect.com/science/article/pii/S0254629915000137"
+    },
+    {
+        "Name": "Crinum asiaticum",
+        "Imagelink": "https://en.wikipedia.org/wiki/Crinum_asiaticum",
+        "Publication DOI": "https://www.nparks.gov.sg/florafaunaweb/flora/1/8/1881"
+    },
+    {
+        "Name": "Croton bonplandianus",
+        "Imagelink": "https://www.flowersofindia.net/catalog/slides/Ban%20Tulsi.html",
+        "Publication DOI": "https://www.phytojournal.com/archives/2018/vol7issue1/PartK/6-6-331-839.pdf"
+    },
+    {
+        "Name": "Curculigo orchioides",
+        "Imagelink": "https://en.wikipedia.org/wiki/Curculigo_orchioides",
+        "Publication DOI": "https://japsonline.com/abstract.php?article_id=4044&sts=2"
+    },
+    {
+        "Name": "Cyclea peltata",
+        "Imagelink": "https://en.wikipedia.org/wiki/Cyclea_peltata",
+        "Publication DOI": "https://en.wikipedia.org/wiki/Cyclea_peltata"
+    },
+    {
+        "Name": "Cymbopogon citratus",
+        "Imagelink": "https://en.wikipedia.org/wiki/Cymbopogon_citratus",
+        "Publication DOI": "https://www.sciencedirect.com/science/article/pii/S2468227619306982"
+    },
+    {
+        "Name": "Datura metel",
+        "Imagelink": "https://en.wikipedia.org/wiki/Datura_metel",
+        "Publication DOI": "https://www.sciencedirect.com/science/article/abs/pii/S0378874115302099"
+    },
+    {
+        "Name": "Dendrophthoe falcata (L.f.) Ettingsh",
+        "Imagelink": "https://en.wikipedia.org/wiki/Dendrophthoe_falcata",
+        "Publication DOI": "https://en.wikipedia.org/wiki/Dendrophthoe_falcata"
+    },
+    {
+        "Name": "Diploclasia glaucescens (Blume) Diels",
+        "Imagelink": "https://en.wikipedia.org/wiki/Diploclisia_glaucescens",
+        "Publication DOI": "https://pilikula.karnataka.gov.in/171/diploclisia-glaucescens/en"
+    },
+    {
+        "Name": "Diplocyclos palmatus (L.) C. Jeffrey",
+        "Imagelink": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:292565-1",
+        "Publication DOI": "https://www.mdpi.com/2073-4395/11/11/2164#:~:text=Abstract-,Diplocyclos%20palmatus%20(L.),large%2Dscale%20production%20and%20conservation."
+    },
+    {
+        "Name": "Elephantopus scaber L.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Elephantopus_scaber",
+        "Publication DOI": "https://journals.lww.com/iphr/fulltext/2005/37040/wound_healing_activity_of_the_leaf_extracts_and.6.aspx"
+    },
+    {
+        "Name": "Embeliaribes",
+        "Imagelink": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/medicinal-and-aromatic-plants/embelia-ribes-1",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9311956/#:~:text=Embeliaribes%20Burm.,and%20five%2Dlobed%20persisting%20calyxes."
+    },
+    {
+        "Name": "Emblica officinalis Gaertn.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Phyllanthus_emblica",
+        "Publication DOI": "https://pubmed.ncbi.nlm.nih.gov/21317655/#:~:text=The%20fruit%20is%20used%20either,dyspepsia%2C%20and%20as%20a%20digestive."
+    },
+    {
+        "Name": "Emilia sonchifolia (L.) DC.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Emilia_sonchifolia",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3283958/#:~:text=Emilia%20sonchifolia%20is%20an%20edible,Plant%20collection"
+    },
+    {
+        "Name": "Euphorbia hirta",
+        "Imagelink": "https://en.wikipedia.org/wiki/Euphorbia_hirta",
+        "Publication DOI": "https://www.researchgate.net/publication/342379632_Pharmacological_actions_of_Euphorbia_hirta_A_review"
+    },
+    {
+        "Name": "Ficus amplissima Sm.",
+        "Imagelink": "https://www.gbif.org/species/5572290",
+        "Publication DOI": "https://en.wikipedia.org/wiki/Ficus_amplissima#:~:text=%22Stone%20ichi%22)-,Uses,inflammatory%20and%20wound%20healing%20properties."
+    },
+    {
+        "Name": "Ficus arnottiana",
+        "Imagelink": "https://en.wikipedia.org/wiki/Ficus_arnottiana",
+        "Publication DOI": "http://repositorium.uminho.pt/bitstream/1822/10497/1/Marslin%20et%20al%202009%20AJPT.pdf"
+    },
+    {
+        "Name": "Ficus exasperata Vahl",
+        "Imagelink": "https://en.wikipedia.org/wiki/Ficus_exasperata",
+        "Publication DOI": "https://tropical.theferns.info/viewtropical.php?id=Ficus+exasperata"
+    },
+    {
+        "Name": "Ficus hispida L.f.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Ficus_hispida",
+        "Publication DOI": "https://pubmed.ncbi.nlm.nih.gov/31669442/#:~:text=Ethnopharmacological%20relevance%3A%20Ficus%20hispida%20L.f.,diabetes%2C%20inflammation%2C%20and%20cancer."
+    },
+    {
+        "Name": "Ficus racemosa",
+        "Imagelink": "https://en.wikipedia.org/wiki/Ficus_racemosa",
+        "Publication DOI": "https://www.academia.edu/27498522/Ficus_Racemosa_Phytochemistry_Traditional_Uses_and_Pharmacological_Properties_A_Review"
+    },
+    {
+        "Name": "Gardenia gummifera",
+        "Imagelink": "https://en.wikipedia.org/wiki/Gardenia_gummifera",
+        "Publication DOI": "https://www.sciencedirect.com/science/article/abs/pii/S2210803323001276"
+    },
+    {
+        "Name": "Glycosmis pentaphylla (Retz.) DC.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Glycosmis_pentaphylla",
+        "Publication DOI": "http://www.stuartxchange.org/Gingging.html"
+    },
+    {
+        "Name": "Hemidesmus indicus",
+        "Imagelink": "https://en.wikipedia.org/wiki/Hemidesmus_indicus",
+        "Publication DOI": "https://vikaspedia.in/agriculture/crop-production/package-of-practices/medicinal-and-aromatic-plants/hemidesmus-indicus#:~:text=Seeds%20are%20oblong%20in%20shape,Propagation%20material"
+    },
+    {
+        "Name": "Holarrhena pubescens",
+        "Imagelink": "https://en.wikipedia.org/wiki/Holarrhena_pubescens",
+        "Publication DOI": "https://www.keralauniversity.ac.in/digital_garden/145.html"
+    },
+    {
+        "Name": "Ixora coccinea",
+        "Imagelink": "https://en.wikipedia.org/wiki/Ixora_coccinea",
+        "Publication DOI": "https://onlinelibrary.wiley.com/doi/10.1155/2014/751824"
+    },
+    {
+        "Name": "Leea indica (Burm.f.) Merr.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Leea_indica",
+        "Publication DOI": "https://www.researchgate.net/publication/325626973_Traditional_uses_chemistry_and_pharmacological_activities_of_Leea_indica_Burm_f_Merr_Vitaceae_A_comprehensive_review"
+    },
+    {
+        "Name": "Leucas aspera",
+        "Imagelink": "https://en.wikipedia.org/wiki/Leucas_aspera",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3609283/#:~:text=agents%5B4%5D.-,Leucas%20aspera%20(L.,chronic%20skin%20eruption%5B10%5D."
+    },
+    {
+        "Name": "Mangifera indica",
+        "Imagelink": "https://en.wikipedia.org/wiki/Mangifera_indica",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3249901/#:~:text=Studies%20indicate%20mango%20possesses%20antidiabetic,reveal%20other%20potential%20therapeutic%20effects."
+    },
+    {
+        "Name": "Mesua ferrea Linn.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Mesua_ferrea",
+        "Publication DOI": "https://ijapbc.com/files/19-1323.pdf"
+    },
+    {
+        "Name": "Tinospora cordifolia",
+        "Imagelink": "https://en.wikipedia.org/wiki/Tinospora_cordifolia",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2924974/#:~:text=Potential%20medicinal%20properties%20reported%20by,with%20phytochemical%20and%20pharmacological%20reports."
+    },
+    {
+        "Name": "Tragia involucrata L.",
+        "Imagelink": "https://en.wikipedia.org/wiki/Tragia_involucrata",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7785955/#:~:text=Tragia%20involucrata%20L.%20have%20been,inflammation%2C%20pain%20and%20skin%20infection."
+    },
+    {
+        "Name": "Tridax procumbens",
+        "Imagelink": "https://en.wikipedia.org/wiki/Tridax_procumbens",
+        "Publication DOI": "https://www.sciencedirect.com/science/article/pii/S2667031321001810"
+    },
+    {
+        "Name": "Vernonia cinerea",
+        "Imagelink": "https://en.wikipedia.org/wiki/Cyanthillium_c inereum",
+        "Publication DOI": "https://www.sciencedirect.com/science/article/pii/S2949866X23001193#:~:text=Introduction-,Vernonia%20cinerea%20L.%2C%20also%20known%20as%20purple%20fleabane%2C%20is,cultures%20for%20its%20medicinal%20properties.&text=It%20has%20been%20used%20to,digestive%20disorders%2C%20and%20skin%20conditions."
+    },
+    {
+        "Name": "Vigna radiata",
+        "Imagelink": "https://en.wikipedia.org/wiki/Mung_bean#:~:text=The%20mung%20bean%20(Vigna%20radiata)%2C%20alternatively%20known,ingredient%20in%20both%20savoury%20and%20sweet%20dishes.",
+        "Publication DOI": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9500525/"
+    },
+    {
+        "Name": "Vitex negundo",
+        "Imagelink": "https://en.wikipedia.org/wiki/Vitex_negundo",
+        "Publication DOI": "https://drmajeed.com/pdf/articles/2018/Oct/2018_Wound_healing_activity.pdf"
+    }
+];
+ // Function to populate the table with plant data
+ function populateTable() {
+            const tableBody = document.getElementById("plant-table-body");
+
+            plants.forEach(plant => {
+                const row = document.createElement("tr");
+
+                const nameCell = document.createElement("td");
+                nameCell.textContent = plant.Name;
+                row.appendChild(nameCell);
+
+                const dataCell = document.createElement("td");
+                const dataLink = document.createElement("a");
+                dataLink.href = plant["Publication DOI"];
+                dataLink.target = "_blank";
+                dataLink.textContent = "Data Link";
+                dataCell.appendChild(dataLink);
+                row.appendChild(dataCell);
+
+                const imageCell = document.createElement("td");
+                const imageLink = document.createElement("a");
+                imageLink.href = plant["Imagelink"];
+                imageLink.target = "_blank";
+                imageLink.textContent = "Image Link ";
+                imageCell.appendChild(imageLink);
+                row.appendChild(imageCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+        window.onload = populateTable;
+    </script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+/* Reference Page Styling */
+.reference-container {
+    margin: 40px;
+    padding: 20px;
+}
+
+.reference-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reference-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.reference-table th,
+.reference-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+.reference-table th {
+    background-color: #f5f8f5;
+    color: rgb(12, 12, 12);
+    font-weight: bold;
+}
+
+.reference-table td {
+    background-color: #f9f9f9;
+}
+
+.reference-table td a {
+    color:rgb(46, 25, 25);
+    text-decoration: none;
+}
+
+.reference-table td a:hover {
+    text-decoration: underline;
+}
+
+.reference-table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+.reference-table tr:hover {
+    background-color: #e6f7e6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #2a2a2a;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.top-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    margin: 20px auto;
+    width: 70%;
+    text-align: center;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid black; /* Added black border */
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    color: #333;
+    background-color: #f7faf7;
+}
+
+.search-container input:focus {
+    box-shadow: 0 6px 12px #333;
+    border-color: black; /* Keep black border on focus */
+}
+
+.search-container input::placeholder {
+    color: #333;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.search-container button {
+    padding: 12px 22px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    border: 2px solid #333; /* Added border */
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-left: 10px;
+    margin-top: 20px; /* Moves the button down */
+}
+
+.search-container button:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #555; /* Darkens the border on hover */
+}
+
+.search-container button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(140, 158, 255, 0.5);
+}
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    text-align: center;
+    padding-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 15px 0;
+    color: #2a2a2a;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card p {
+    color: #555;
+    font-size: 16px;
+    margin: 0 10px 10px;
+    background: #f0f8ff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Modal (You can add this if you have a modal) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    animation: scaleUp 0.3s ease-in-out;
+    border: 2px solid white;
+}
+
+.modal-content h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-content p {
+    margin: 15px 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.modal-content a {
+    color: #94bbd4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+.modal .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+    color: #222;
+}
+
+/* Accessibility */
+.search-container input[aria-label], 
+.search-container button[aria-label],
+.modal-content h2[aria-label], 
+.modal-content p[aria-label] {
+    outline: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .search-container input {
+        width: 100%;
+    }
+
+    .results-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    #hero {
+        padding: 15vh 0;
+    }
+}
+
+/* Dark Mode Toggle (Simple Example) */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.dark-mode-toggle.active {
+    background-color: #222;
+    color: #fff;
+}
+
+/* Responsive Typography */
+@media (max-width: 576px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section */
+#hero {
+    background-image: url('images/talakaveri.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    text-align: center;
+    padding: 15vh 0; /* Using vh units for better height adaptation */
+    color: #fff; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px; 
+    color: #fff; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
+#hero p {
+    font-size: 1.4rem; 
+    max-width: 600px; 
+    color: #fff; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
+#hero .btn {
+    display: inline-block;
+    padding: 18px 35px; 
+    font-size: 1.1rem;
+    background: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 20px; 
+}
+
+#hero .btn:hover {
+    background: #3e8e41; 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); 
+    transform: scale(1.05); /* Added a hover scale effect */
+}
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555; 
+}
+
+/* Classification Section */
+#classification {
+    padding: 50px 20px;
+    background: #f0f8f7;
+}
+
+#classification .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#classification h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+#classification .charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#classification .chart {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-height: 300px; /* Ensures consistent height for all boxes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#classification .chart:hover {
+    transform: translateY(-5px); /* Added hover effect for interaction */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.classification .chart img {
+    width: 90%; /* Increased width for larger images */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Set a max height to keep them consistent */
+    object-fit: cover; /* Ensures images fill the specified dimensions */
+    object-position: top; /* Focuses on the top part of the image */
+    margin-bottom: 15px;
+}
+
+#classification .chart img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#classification .chart p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px 0; 
+    text-align: center;
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #hero {
+        padding: 10vh 0; /* Reduced padding for smaller screens */
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about p {
+        font-size: 1.1rem;
+    }
+
+    #classification h3 {
+        font-size: 1.5rem;
+    }
+
+    #classification .charts {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid layout for smaller screens */
+    }
+
+    #classification .chart {
+        padding: 15px; /* Reduced padding for smaller devices */
+    }
+
+    #classification .chart img {
+        max-height: 00px; /* Adjust max height for images */
+    }
+}
